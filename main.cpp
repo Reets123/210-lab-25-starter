@@ -33,7 +33,22 @@ int main() {
     cout << "Read: " << duration.count() << " ms" << endl;
 
     start = high_resolution_clock::now();
-    sortData(dataVect
+    sortData(dataVector, dataList);
+    end = high_resolution_clock::now();
+    duration = duration_cast<milliseconds>(end - start);
+    cout << "Sort: " << duration.count() << " ms (Set: -1)" << endl;
+
+    // Insert a value into all three data structures
+    start = high_resolution_clock::now();
+    insertData(dataVector, dataList, dataSet, "TESTCODE");
+    end = high_resolution_clock::now();
+    duration = duration_cast<milliseconds>(end - start);
+    cout << "Insert: " << duration.count() << " ms" << endl;
+
+    // Delete a value from all three data structures
+    start = high_resolution_clock::now();
+    deleteData(dataVector, dataList, dataSet);
+    end = high_resolution_clock:
     
 
     return 0;
