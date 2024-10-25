@@ -79,7 +79,15 @@ oid insertData(vector<string>& vec, list<string>& lst, set<string>& st, const st
     vec.insert(vec.begin() + vec.size() / 2, value);
     
     // Insert into list (middle)
-    auto it = lst.begi
+    auto it = lst.begin();
+    advance(it, lst.size() / 2);
+    lst.insert(it, value);
+    
+    // Insert into set
+    st.insert(value);
+}
+
+void deleteData(ve
     
 
     return 0;
