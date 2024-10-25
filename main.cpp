@@ -59,7 +59,20 @@ void readData(const string& filename, vector<string>& vec, list<string>& lst, se
     ifstream file(filename);
     string line;
     while (getline(file, line)) {
-        if (vec.siz
+        if (vec.size() < NUM_OF_ELEMENTS) {
+            vec.push_back(line);
+            lst.push_back(line);
+            st.insert(line);
+        } else {
+            break;
+        }
+    }
+}
+
+void sortData(vector<string>& vec, list<string>& lst) {
+    std::sort(vec.begin(), vec.end());
+    lst.sort(); 
+}
     
 
     return 0;
