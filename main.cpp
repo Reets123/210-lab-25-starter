@@ -73,6 +73,13 @@ void sortData(vector<string>& vec, list<string>& lst) {
     std::sort(vec.begin(), vec.end());
     lst.sort(); 
 }
+
+oid insertData(vector<string>& vec, list<string>& lst, set<string>& st, const string& value) {
+    // Insert into vector (middle)
+    vec.insert(vec.begin() + vec.size() / 2, value);
+    
+    // Insert into list (middle)
+    auto it = lst.begi
     
 
     return 0;
