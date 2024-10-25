@@ -48,7 +48,18 @@ int main() {
     // Delete a value from all three data structures
     start = high_resolution_clock::now();
     deleteData(dataVector, dataList, dataSet);
-    end = high_resolution_clock:
+    end = high_resolution_clock::now();
+    duration = duration_cast<milliseconds>(end - start);
+    cout << "Delete: " << duration.count() << " ms" << endl;
+
+    return 0;
+}
+
+void readData(const string& filename, vector<string>& vec, list<string>& lst, set<string>& st) {
+    ifstream file(filename);
+    string line;
+    while (getline(file, line)) {
+        if (vec.siz
     
 
     return 0;
