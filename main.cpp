@@ -21,6 +21,19 @@ void insertData(vector<string>& vec, list<string>& lst, set<string>& st, const s
 void deleteData(vector<string>& vec, list<string>& lst, set<string>& st);
 
 int main() {
+    vector<string> dataVector;
+    list<string> dataList;
+    set<string> dataSet;
+
+    // Read the data into the data structures
+    auto start = high_resolution_clock::now();
+    readData("data.txt", dataVector, dataList, dataSet);
+    auto end = high_resolution_clock::now();
+    auto duration = duration_cast<milliseconds>(end - start);
+    cout << "Read: " << duration.count() << " ms" << endl;
+
+    start = high_resolution_clock::now();
+    sortData(dataVect
     
 
     return 0;
