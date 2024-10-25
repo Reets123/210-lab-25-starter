@@ -15,6 +15,11 @@ using namespace std::chrono;
 
 const int NUM_OF_ELEMENTS = 20000; 
 
+void readData(const string& filename, vector<string>& vec, list<string>& lst, set<string>& st);
+void sortData(vector<string>& vec, list<string>& lst);
+void insertData(vector<string>& vec, list<string>& lst, set<string>& st, const string& value);
+void deleteData(vector<string>& vec, list<string>& lst, set<string>& st);
+
 int main() {
     
 
