@@ -87,10 +87,20 @@ oid insertData(vector<string>& vec, list<string>& lst, set<string>& st, const st
     st.insert(value);
 }
 
-void deleteData(ve
+void deleteData(vector<string>& vec, list<string>& lst, set<string>& st) {
+    // Delete middle element from vector
+    if (!vec.empty()) {
+        vec.erase(vec.begin() + vec.size() / 2);
+    }
     
-
-    return 0;
+    // Delete middle element from list
+    if (!lst.empty()) {
+        auto it = lst.begin();
+        advance(it, lst.size() / 2);
+        lst.erase(it);
+    }
+    
+    st.erase("TESTCODE");
 }
 
 /* syntax examples:
