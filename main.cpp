@@ -9,6 +9,7 @@
 #include <string>
 #include <algorithm> // For std::sort
 #include <chrono>
+#include <iomanip>
 
 using namespace std;
 using namespace std::chrono;
@@ -27,7 +28,7 @@ int main() {
 
     // Read the data into the data structures
     auto start = high_resolution_clock::now();
-    readData("data.txt", dataVector, dataList, dataSet);
+    readData("codes.txt", dataVector, dataList, dataSet);
     auto end = high_resolution_clock::now();
     auto duration = duration_cast<milliseconds>(end - start);
     cout << "Read: " << duration.count() << " ms" << endl;
@@ -74,7 +75,7 @@ void sortData(vector<string>& vec, list<string>& lst) {
     lst.sort(); 
 }
 
-oid insertData(vector<string>& vec, list<string>& lst, set<string>& st, const string& value) {
+void insertData(vector<string>& vec, list<string>& lst, set<string>& st, const string& value) {
     // Insert into vector (middle)
     vec.insert(vec.begin() + vec.size() / 2, value);
     
@@ -102,10 +103,3 @@ void deleteData(vector<string>& vec, list<string>& lst, set<string>& st) {
     
     st.erase("TESTCODE");
 }
-
-/* syntax examples:
-auto start = high_resolution_clock::now()
-auto end = high_resolution_clock::now()
-auto duration = duration_cast<milliseconds>(end - start)
-duration.count() references elapsed milliseconds
-*/
