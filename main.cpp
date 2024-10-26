@@ -43,13 +43,20 @@ int main() {
     duration = duration_cast<milliseconds>(end - start);
     cout << setw(10) << "Sort" << setw(12) << duration.count() << setw(12) << duration.count() << setw(12) << "-1" << endl;
 
+    // value into all three data structures
+    start = high_resolution_clock::now();
+    insertData(dataVector, dataList, dataSet, "TESTCODE");
+    end = high_resolution_clock::now();
+    duration = duration_cast<milliseconds>(end - start);
+    cout << setw(10) << "Insert" << setw(12) << duration.count() << setw(12) << duration.count() << setw(12) << dataSet.count("TESTCODE") << endl;
+
     // Delete a value from all three data structures
     start = high_resolution_clock::now();
     deleteData(dataVector, dataList, dataSet);
     end = high_resolution_clock::now();
     duration = duration_cast<milliseconds>(end - start);
-    cout << "Delete: " << duration.count() << " ms" << endl;
-
+    cout << setw(10) << "Delete" << setw(12) << duration.count() << setw(12) << duration.count() << setw(12) << 0 << endl; 
+    
     return 0;
 }
 
