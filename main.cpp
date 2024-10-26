@@ -31,20 +31,17 @@ int main() {
     readData("codes.txt", dataVector, dataList, dataSet);
     auto end = high_resolution_clock::now();
     auto duration = duration_cast<milliseconds>(end - start);
-    cout << "Read: " << duration.count() << " ms" << endl;
 
+    // output format setup
+    cout << left << setw(10) << "Operation" << setw(12) << "Vector" << setw(12) << "List" << setw(12) << "Set" << endl;
+    cout << setw(10) << "Read" << setw(12) << duration.count() << setw(12) << duration.count() << setw(12) << duration.count() << endl;
+
+    // sort
     start = high_resolution_clock::now();
     sortData(dataVector, dataList);
     end = high_resolution_clock::now();
     duration = duration_cast<milliseconds>(end - start);
-    cout << "Sort: " << duration.count() << " ms (Set: -1)" << endl;
-
-    // Insert a value into all three data structures
-    start = high_resolution_clock::now();
-    insertData(dataVector, dataList, dataSet, "TESTCODE");
-    end = high_resolution_clock::now();
-    duration = duration_cast<milliseconds>(end - start);
-    cout << "Insert: " << duration.count() << " ms" << endl;
+    cout << setw(10) << "Sort" << setw(12) << duration.count() << setw(12) << duration.count() << setw(12) << "-1" << endl;
 
     // Delete a value from all three data structures
     start = high_resolution_clock::now();
